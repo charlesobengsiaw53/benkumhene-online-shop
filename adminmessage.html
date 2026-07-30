@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Messages | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#198754;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+.search-box{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    width:300px;
+    padding:10px;
+}
+
+.search-box button{
+    padding:10px 20px;
+    background:#198754;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#198754;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+button{
+    padding:8px 12px;
+    margin:2px;
+    cursor:pointer;
+    border:none;
+    border-radius:5px;
+}
+
+.view{
+    background:#0d6efd;
+    color:white;
+}
+
+.reply{
+    background:#198754;
+    color:white;
+}
+
+.delete{
+    background:#dc3545;
+    color:white;
+}
+
+.statusUnread{
+    color:red;
+    font-weight:bold;
+}
+
+.statusRead{
+    color:green;
+    font-weight:bold;
+}
+
+.summary{
+    margin-top:20px;
+    display:flex;
+    gap:30px;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>BENKUMHENE ONLINE SHOP</h1>
+
+<h2>Administrator Message Center</h2>
+
+</header>
+
+<div class="container">
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Search Customer...">
+
+<button>Search</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>No.</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Phone</th>
+
+<th>Subject</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="messageTable">
+
+</tbody>
+
+</table>
+
+<div class="summary">
+
+<div>Total Messages:
+<span id="total">0</span>
+</div>
+
+<div>Unread:
+<span id="unread">0</span>
+</div>
+
+<div>Read:
+<span id="read">0</span>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const table=document.getElementById("messageTable");
+
+let messages=
+JSON.parse(localStorage.getItem("messages")) || [];
+
+let unread=0;
+
+let read=0;
+
+messages.forEach((msg,index)=>{
+
+if(msg.status==="Read"){
+
+read++;
+
+}else{
+
+unread++;
+
+}
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${msg.fullname}</td>
+
+<td>${msg.email}</td>
+
+<td>${msg.phone}</td>
+
+<td>${msg.subject}</td>
+
+<td>${msg.date}</td>
+
+<td class="${
+msg.status==="Read"
+?
+"statusRead"
+:
+"statusUnread"
+}">
+${msg.status}
+</td>
+
+<td>
+
+<button
+class="view"
+onclick="viewMessage(${index})">
+View
+</button>
+
+<button
+class="reply"
+onclick="replyMessage(${index})">
+Reply
+</button>
+
+<button
+class="delete"
+onclick="deleteMessage(${index})">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("total").innerHTML=
+messages.length;
+
+document.getElementById("unread").innerHTML=
+unread;
+
+document.getElementById("read").innerHTML=
+read;
+
+function viewMessage(index){
+
+localStorage.setItem(
+"selectedMessage",
+index
+);
+
+window.location.href=
+"viewmessage.html";
+
+}
+
+function replyMessage(index){
+
+localStorage.setItem(
+"selectedMessage",
+index
+);
+
+window.location.href=
+"replymessage.html";
+
+}
+
+function deleteMessage(index){
+
+if(confirm("Delete this message?")){
+
+messages.splice(index,1);
+
+localStorage.setItem(
+"messages",
+JSON.stringify(messages)
+);
+
+location.reload();
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

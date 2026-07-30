@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Administrator Dashboard | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/*================ HEADER ================*/
+
+header{
+    background:#198754;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    font-size:28px;
+}
+
+header a{
+    color:white;
+    text-decoration:none;
+    background:#dc3545;
+    padding:10px 18px;
+    border-radius:5px;
+}
+
+header a:hover{
+    background:#bb2d3b;
+}
+
+/*================ MAIN =================*/
+
+.dashboard{
+    display:flex;
+    min-height:calc(100vh - 80px);
+}
+
+/*================ SIDEBAR ================*/
+
+.sidebar{
+
+    width:280px;
+    background:#212529;
+    color:white;
+    padding:20px;
+
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin:10px 0;
+}
+
+.sidebar a{
+
+    color:white;
+    text-decoration:none;
+    display:block;
+    padding:12px;
+    border-radius:6px;
+
+}
+
+.sidebar a:hover{
+
+    background:#198754;
+
+}
+
+/*================ CONTENT =================*/
+
+.content{
+
+    flex:1;
+    padding:30px;
+
+}
+
+.content h2{
+
+    margin-bottom:25px;
+
+}
+
+/*================ CARDS =================*/
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+    border-radius:10px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.card h3{
+
+    color:#198754;
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    margin-bottom:20px;
+
+}
+
+.card a{
+
+    display:inline-block;
+    text-decoration:none;
+    background:#198754;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+
+}
+
+.card a:hover{
+
+    background:#145c32;
+
+}
+
+/*================ FOOTER =================*/
+
+footer{
+
+    background:#212529;
+    color:white;
+    text-align:center;
+    padding:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>BENKUMHENE ONLINE SHOP - ADMIN PANEL</h1>
+
+<a href="adminlogin.html">Logout</a>
+
+</header>
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+<h2>Administrator</h2>
+
+<ul>
+
+<li><a href="admin.html">🏠 Dashboard</a></li>
+
+<li><a href="addproduct.html">➕ Add Product</a></li>
+
+<li><a href="editproduct.html">✏ Edit Product</a></li>
+
+<li><a href="deleteproduct.html">🗑 Delete Product</a></li>
+
+<li><a href="inventory.html">📦 Inventory</a></li>
+
+<li><a href="history.html">🛒 Customer Orders</a></li>
+
+<li><a href="customers.html">👥 Customer Accounts</a></li>
+
+<li><a href="payments.html">💳 Confirm Payments</a></li>
+
+<li><a href="viewmessage.html">💬 Customer Messages</a></li>
+
+<li><a href="emails.html">📧 Customer Emails</a></li>
+
+<li><a href="advertisement.html">📢 Advertisements</a></li>
+
+<li><a href="reports.html">📊 Reports</a></li>
+
+<li><a href="settings.html">⚙ Settings</a></li>
+
+</ul>
+
+</div>
+
+<div class="content">
+
+<h2>Administrator Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Add Products</h3>
+<p>Upload new products to the online shop.</p>
+<a href="addproduct.html">Open</a>
+</div>
+
+<div class="card">
+<h3>Edit Products</h3>
+<p>Modify product information and prices.</p>
+<a href="editproduct.html">Open</a>
+</div>
+
+<div class="card">
+<h3>Delete Products</h3>
+<p>Delete product information and prices.</p>
+<a href="deleteproduct.html">Open</a>
+</div>

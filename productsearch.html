@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Search | Benkumhene Online Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* Header */
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+/* Search Area */
+.search-box{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.search-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr auto;
+    gap:15px;
+}
+
+input, select{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+/* Products */
+.products{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+    text-align:center;
+}
+
+.price{
+    color:#198754;
+    font-size:22px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+.search-grid{
+grid-template-columns:1fr;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="cart.html">Cart</a>
+<a href="account.html">My Account</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="banner">
+<h1>Search Products</h1>
+<p>Find your favorite products quickly.</p>
+</section>
+
+<div class="search-box">
+
+<div class="search-grid">
+
+<input type="text" placeholder="Search products...">
+
+<select>
+<option>All Categories</option>
+<option>Books</option>
+<option>Herbal Products</option>
+<option>Electronics</option>
+<option>Clothing</option>
+<option>Home & Kitchen</option>
+</select>
+
+<select>
+<option>Any Price</option>
+<option>Under $25</option>
+<option>$25 - $50</option>
+<option>$50 - $100</option>
+<option>Above $100</option>
+</select>
+
+<button>Search</button>
+
+</div>
+
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="https://via.placeholder.com/300x220?text=Book" alt="Book">
+<div class="info">
+<h3>Mathematics Book</h3>
+<p class="price">$20.00</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x220?text=Herbal" alt="Herbal Product">
+<div class="info">
+<h3>Herbal Capsules</h3>
+<p class="price">$15.00</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x220?text=Laptop" alt="Laptop">
+<div class="info">
+<h3>Laptop</h3>
+<p class="price">$650.00</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x220?text=Phone" alt="Phone">
+<div class="info">
+<h3>Smartphone</h3>
+<p class="price">$299.00</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Quality Products • Affordable Prices • Trusted Service</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

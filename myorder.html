@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Orders | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+/* Container */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.order-card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+    margin-bottom:25px;
+}
+
+.order-header{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.order-header h2{
+    color:#198754;
+}
+
+.status{
+    padding:8px 15px;
+    border-radius:20px;
+    color:white;
+    font-weight:bold;
+}
+
+.processing{
+    background:#ff9800;
+}
+
+.shipped{
+    background:#2196f3;
+}
+
+.delivered{
+    background:#198754;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#198754;
+    color:white;
+    padding:12px;
+}
+
+table td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.total{
+    text-align:right;
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:#198754;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:5px;
+    background:#198754;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.order-header{
+    flex-direction:column;
+    gap:10px;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="cart.html">Cart</a>
+<a href="account.html">My Account</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="banner">
+
+<h1>My Orders</h1>
+
+<p>Track and manage your purchases.</p>
+
+</section>
+
+<div class="container">
+
+<div class="order-card">
+
+<div class="order-header">
+
+<h2>Order #100245</h2>
+
+<div class="status delivered">
+Delivered
+</div>
+
+</div>
+
+<p><strong>Order Date:</strong> July 1, 2026</p>
+
+<table>
+
+<tr>
+
+<th>Product</th>
+
+<th>Quantity</th>
+
+<th>Price</th>
+
+<th>Total</th>
+
+</tr>
+
+<tr>
+
+<td>Mathematics Book</td>
+
+<td>2</td>
+
+<td>$20.00</td>
+
+<td>$40.00</td>
+
+</tr>
+
+<tr>
+
+<td>Herbal Capsules</td>
+
+<td>1</td>
+
+<td>$15.00</td>
+
+<td>$15.00</td>
+
+</tr>
+
+</table>
+
+<div class="total">
+Grand Total: $55.00
+</div>
+
+<button>Download Invoice</button>
+
+</div>
+
+<div class="order-card">
+
+<div class="order-header">
+
+<h2>Order #100246</h2>
+
+<div class="status processing">
+Processing
+</div>
+
+</div>
+
+<p><strong>Order Date:</strong> July 3, 2026</p>
+
+<table>
+
+<tr>
+
+<th>Product</th>
+
+<th>Quantity</th>
+
+<th>Price</th>
+
+<th>Total</th>
+
+</tr>
+
+<tr>
+
+<td>Laptop</td>
+
+<td>1</td>
+
+<td>$650.00</td>
+
+<td>$650.00</td>
+
+</tr>
+
+</table>
+
+<div class="total">
+Grand Total: $650.00
+</div>
+
+<button>Track Order</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Quality Products • Secure Shopping • Fast Delivery</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Benkumhene Online Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#198754,#ffc107);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:400px;
+    background:#fff;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.logo{
+    text-align:center;
+    color:#198754;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+h2{
+    text-align:center;
+    color:#333;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:18px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#198754;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+.links{
+    text-align:center;
+    margin-top:20px;
+}
+
+.links a{
+    color:#198754;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+BENKUMHENE ONLINE SHOP
+</div>
+
+<h2>Customer Login</h2>
+<form id="loginForm">
+<label>Email Address</label>
+<input type="email" id="regEmail" placeholder="Enter your email" required>
+<label>Password</label>
+<input type="password" id="regPassword" placeholder="Enter your password" required>
+<button type="submit">Login</button>
+</form>
+
+<div class="links">
+<p><a href="#">Forgot Password?</a></p>
+<br>
+<p>Don't have an account? <a href="register.html">Register Here</a></p>
+</div>
+</div>
+
+<script>
+ const savedAccount = JSON.parse(localStorage.getItem("custForm"));
+const loginForm = document.getElementById("loginForm");
+
+const myEmail_V = document.getElementById("regEmail");
+const myPassword_V = document.getElementById("regPassword");
+
+loginForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    if(savedAccount === null){
+        alert("No account found. Please register first.");
+        window.location.href = "register.html";
+        return;
+    }
+
+    if(
+        myEmail_V.value === savedAccount.email &&
+        myPassword_V.value === savedAccount.password
+    ){
+
+        alert("Login Successful");
+        window.location.href = "customer.html";
+
+    }else{
+
+        alert("Invalid Email or Password");
+
+    }
+
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>

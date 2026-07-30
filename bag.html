@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benkumhene Online Shop - Bags</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    background:#8B0000;
+    color:white;
+    padding:15px;
+}
+
+header h1{
+    text-align:center;
+}
+
+nav{
+    margin-top:10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+.search{
+    text-align:center;
+    margin:20px;
+}
+
+.search input{
+    width:350px;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid gray;
+}
+
+/* Products */
+
+.container{
+    width:95%;
+    margin:auto;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.details{
+    padding:15px;
+}
+
+.details h3{
+    color:#8B0000;
+}
+
+.price{
+    color:green;
+    font-size:20px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#8B0000;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:black;
+}
+
+footer{
+    background:#8B0000;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.cart{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:gold;
+    color:black;
+    padding:10px 15px;
+    border-radius:50px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="cart">
+?? Cart:
+<span id="cart-count">0</span>
+</div>
+
+<header>
+
+<h1>BENKUMHENE ONLINE SHOP</h1>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="bags.html">Bags</a>
+
+<a href="shoes.html">Shoes</a>
+
+<a href="kente.html">Kente</a>
+
+<a href="jewelry.html">Jewelry</a>
+
+<a href="cart.html">Cart</a>
+
+</nav>
+
+</header>
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="Search Bags..."
+onkeyup="searchProduct()">
+
+</div>
+
+<div class="container">
+
+<div class="products" id="products">
+
+<div class="card">
+
+<img src="images/bag1.jpg">
+
+<div class="details">
+
+<h3>Luxury Leather Bag</h3>
+
+<p>High-quality genuine leather handbag.</p>
+
+<div class="price">$120</div>
+
+<button onclick="addCart()">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/bag2.jpg">
+
+<div class="details">
+
+<h3>Travel Backpack</h3>
+
+<p>Perfect for school and travelling.</p>
+
+<div class="price">$85</div>
+
+<button onclick="addCart()">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/bag3.jpg">
+
+<div class="details">
+
+<h3>Fashion Handbag</h3>
+
+<p>Modern ladies handbag.</p>
+
+<div class="price">$95</div>
+
+<button onclick="addCart()">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/bag4.jpg">
+
+<div class="details">
+
+<h3>Laptop Bag</h3>
+
+<p>Waterproof laptop backpack.</p>
+
+<div class="price">$110</div>
+
+<button onclick="addCart()">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/bag5.jpg">
+
+<div class="details">
+
+<h3>Designer Shoulder Bag</h3>
+
+<p>Elegant everyday shoulder bag.</p>
+
+<div class="price">$140</div>
+
+<button onclick="addCart()">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/bag6.jpg">
+
+<div class="details">
+
+<h3>Mini Crossbody Bag</h3>
+
+<p>Small stylish crossbody bag.</p>
+
+<div class="price">$70</div>
+
+<button onclick="addCart()">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+Copyright © 2026
+
+Benkumhene Online Shop
+
+</footer>
+
+<script>
+
+let cart=0;
+
+function addCart(){
+
+cart++;
+
+document.getElementById("cart-count").innerHTML=cart;
+
+alert("Product Added Successfully");
+
+}
+
+function searchProduct(){
+
+let input=document.getElementById("search").value.toUpperCase();
+
+let card=document.getElementsByClassName("card");
+
+for(let i=0;i<card.length;i++){
+
+let title=card[i].getElementsByTagName("h3")[0];
+
+if(title.innerHTML.toUpperCase().indexOf(input)>-1){
+
+card[i].style.display="block";
+
+}
+
+else{
+
+card[i].style.display="none";
+
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

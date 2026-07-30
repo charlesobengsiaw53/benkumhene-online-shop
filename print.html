@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Invoice | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:30px;
+}
+
+.invoice{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid #198754;
+    padding-bottom:20px;
+    margin-bottom:30px;
+}
+
+.logo{
+    color:#198754;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.invoice-title{
+    text-align:right;
+}
+
+.invoice-title h2{
+    color:#198754;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.info div{
+    width:45%;
+}
+
+.info h3{
+    color:#198754;
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th{
+    background:#198754;
+    color:white;
+    padding:12px;
+}
+
+table td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.total{
+    text-align:right;
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+    color:#198754;
+}
+
+.note{
+    margin-top:30px;
+    background:#f8f9fa;
+    padding:20px;
+    border-left:5px solid #198754;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:30px;
+}
+
+button{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    margin:10px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+@media print{
+
+button{
+    display:none;
+}
+
+body{
+    background:white;
+    padding:0;
+}
+
+.invoice{
+    box-shadow:none;
+    border:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="invoice">
+
+<div class="header">
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<div class="invoice-title">
+<h2>INVOICE</h2>
+<p>Invoice No: INV-100245</p>
+<p>Date: July 1, 2026</p>
+</div>
+
+</div>
+
+<div class="info">
+
+<div>
+<h3>Customer</h3>
+<p>John Doe</p>
+<p>123 Main Street</p>
+<p>New York, NY</p>
+<p>USA</p>
+</div>
+
+<div>
+<h3>Company</h3>
+<p>Benkumhene Online Shop</p>
+<p>Email: info@benkumhene.com</p>
+<p>Phone: +1 (000) 000-0000</p>
+</div>
+
+</div>
+
+<table>
+
+<tr>
+<th>Product</th>
+<th>Quantity</th>
+<th>Unit Price</th>
+<th>Total</th>
+</tr>
+
+<tr>
+<td>Mathematics Book</td>
+<td>2</td>
+<td>$20.00</td>
+<td>$40.00</td>
+</tr>
+
+<tr>
+<td>Herbal Capsules</td>
+<td>1</td>
+<td>$15.00</td>
+<td>$15.00</td>
+</tr>
+
+<tr>
+<td>Shipping</td>
+<td>-</td>
+<td>-</td>
+<td>$5.00</td>
+</tr>
+
+</table>
+
+<div class="total">
+Grand Total: $60.00
+</div>
+
+<div class="note">
+<strong>Thank you for shopping with Benkumhene Online Shop.</strong><br><br>
+Please keep this invoice for your records. If you have any questions about your order, contact our customer support team.
+</div>
+
+<div class="buttons">
+
+<button onclick="window.print()">
+??? Print Invoice
+</button>
+
+<button onclick="window.location.href='order.html'">
+? Back to Orders
+</button>
+
+</div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

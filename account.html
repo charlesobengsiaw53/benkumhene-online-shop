@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Benkumhene Online Shop</title>
+</head>
+
+<style>
+add it to this  code for modification <style>
+
+/* =====================================
+   GENERAL
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+header{
+    background:#198754;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.search input{
+    width:300px;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav{
+    background:#145c32;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* =====================================
+   BANNER
+===================================== */
+
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+.banner p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* =====================================
+   PAGE
+===================================== */
+
+.container{
+    width:98%;
+    max-width:1800px;
+    margin:25px auto;
+}
+
+/* =====================================
+   ACCOUNT DASHBOARD
+===================================== */
+
+.account-dashboard{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar{
+    width:260px;
+    min-width:260px;
+    background:#198754;
+    color:white;
+    border-radius:10px;
+    padding:25px;
+    text-align:center;
+}
+
+.sidebar img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:4px solid white;
+    margin-bottom:15px;
+}
+
+.sidebar h2{
+    margin-bottom:20px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:15px 0;
+}
+
+.sidebar ul li a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    padding:10px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover{
+    background:#146c43;
+}
+
+.sidebar ul li a.active{
+    background:white;
+    color:#198754;
+    font-weight:bold;
+}
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.content{
+    flex:1;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* =====================================
+   ACCOUNT FORM + ADVERTISEMENT
+===================================== */
+
+.card-layout{
+    display:flex;
+    gap:25px;
+    align-items:stretch;
+}
+
+/* LEFT */
+
+.form-section{
+
+    flex:1;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:25px;
+
+}
+
+/* RIGHT */
+
+.advert-section{
+
+    flex:1.15;
+
+    background:#eef8f1;
+
+    border:2px solid #198754;
+
+    border-radius:10px;
+
+    padding:20px;
+
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+form{
+    width:100%;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
+
+}
+
+textarea{
+    resize:vertical;
+    min-height:130px;
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+button{
+
+    background:#198754;
+    color:white;
+    border:none;
+    padding:14px 35px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+    margin-top:20px;
+
+}
+
+button:hover{
+
+    background:#145c32;
+
+}
+
+/* =====================================
+   ADVERTISEMENT
+===================================== */
+
+.advert-panel{
+
+    width:100%;
+    background:#1f2937;
+    color:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,.25);
+
+}
+
+.advert-panel h3{
+
+    background:#198754;
+    padding:15px;
+    text-align:center;
+    font-size:24px;
+
+}
+
+.advert-slider img{
+
+    width:100%;
+    height:300px;
+    object-fit:cover;
+
+}
+
+.advert-caption{
+
+    padding:20px;
+    text-align:center;
+
+}
+
+.advert-caption h4{
+
+    font-size:24px;
+    margin-bottom:10px;
+
+}
+
+.advert-caption p{
+
+    font-size:16px;
+    color:#f1f1f1;
+    margin-bottom:15px;
+
+}
+
+.advert-caption button{
+
+    background:#ffc107;
+    color:#222;
+
+}
+
+.advert-caption button:hover{
+
+    background:white;
+
+}
+
+/* =====================================
+   TABLES
+===================================== */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+
+}
+
+table th,
+table td{
+
+    border:1px solid #ddd;
+    padding:12px;
+
+}
+
+table tr:nth-child(even){
+
+    background:#f9f9f9;
+
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer{
+
+    width:100%;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:35px;
+    margin-top:40px;
+    clear:both;
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:900px){
+
+.account-dashboard{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    width:100%;
+
+}
+
+.card-layout{
+
+    flex-direction:column;
+
+}
+
+.form-section,
+.advert-section{
+
+    width:100%;
+
+}
+
+.advert-section{
+
+    margin-top:20px;
+
+}
+
+.search input{
+
+    width:100%;
+
+}
+
+nav a{
+
+    display:inline-block;
+    margin:8px;
+}
+.banner{
+    padding:80px 20px;
+}
+header a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+.sidebar img{
+    width:130px;
+    height:130px;
+    object-fit:cover;
+}
+</style>
+
+
+<body>
+<header>
+<div class="logo">BENKUMHENE ONLINE SHOP</div>
+<div class="search"><input type="text" placeholder="Search products"></div>
+
+<div>
+<a href="cart.html">Cart</a> 
+<a href="login.html">Login</a>
+</div>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="herbal.html">Herbal SHOP</a>
+<a href="kente.html">Kente Shop</a>
+<a href="rental.html">Products</a>
+<a href="wishlist.html">Wishlist</a>
+<a href="order.html">Orders</a>
+<a href="checkout.html">Checkout</a>
+<a href="payment.html">Payment</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section class="banner">
+<h1>My Account</h1>
+<p>Manage your profile, orders, and account settings.</p>
+</section>
+
+<div class="container">
+    <div class="account-dashboard">
+        <div class="sidebar">
+            <img src="https://via.placeholder.com/120" alt="Profile">
+            <h2>Customer</h2>
+
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="addresses.html">Addresses</a></li>
+                <li><a href="payment.html">Payment Methods</a></li>
+                <li><a href="account_setting.html">Account Settings</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+</div>
+<div class="content">
+    <div class="card">
+
+    <div class="card-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="form-section">
+
+        <h2>Account Information</h2>
+        <hr><br>
+
+        <form id="accountForm">
+
+            <label>Full Name</label>
+            <input type="text" id="firstName">
+
+            <label>Email</label>
+            <input type="email" id="gmail">
+
+            <label>Phone</label>
+            <input type="text" id="number">
+
+            <label>Address</label>
+            <textarea rows="4" id="address"></textarea>
+
+            <button type="submit">Save Changes</button>
+
+        </form>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="advert-section">
+
+        <div class="advert-panel">
+
+            <h3>Today's Deals</h3>
+
+            <div class="advert-slider">
+
+                <img id="advertImage"
+                     src="images/kente1.jpg"
+                     alt="Advertisement">
+
+                <div class="advert-caption">
+
+                    <h4 id="advertTitle">Beautiful Kente</h4>
+
+                    <p id="advertText">
+                        Quality Traditional Wear
+                    </p>
+
+                    <button><a href="login.html">Shop Now</a></button>
+ 
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<sectio>
+<footer>
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+</footer>
+</section>
+
+
+<script src="account_JS.js"></script>
+</body>
+</html>

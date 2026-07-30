@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--================ MAIN HEAD SECTION================-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benkumhene Online Shop | Ghana Traditional Kente Collection</title>
+<link rel="stylesheet" href="kente_CSS.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<body>
+<!--================ HEADER SECTION================-->
+<header>
+<div class="logo">
+<h1>Benkumhene Online Shop</h1>
+<p>Authentic Ghanaian Kente Collection</p>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="kente.html" class="active">Kente</a></li>
+        <li><a href="bags.html">Bags</a></li>
+<li><a href="add.html">Add Product</a></li>
+        <li><a href="shoes.html">Shoes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+            <a href="cart.html">
+                <i class="fas fa-shopping-cart"></i>
+                Cart
+                <span id="cart-count">0</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</header>
+
+
+
+
+<!--================ HERO SECTION================-->
+<section class="hero">
+<div class="hero-text">
+<h2>Traditional Ghana Kente Collection</h2>
+<p>Discover authentic handwoven Ghanaian Kente cloths for: 
+
+Graduation Wedding, Traditional Marriage, Church,Festivals, Special Occasions</p>
+<a href="#products" class="btn">Shop Now</a>
+</div>
+</section>
+
+
+
+<!--================ SEARCH SECTION ================-->
+<section class="search-area">
+<input type="text" id="search" placeholder="Search Kente Products...">
+</section>
+
+
+<!--================ CATEGORY SECTION ================-->
+<section class="categories">
+<button onclick="filterProducts('all')">All</button>
+<button onclick="filterProducts('Royal')">Royal</button>
+<button onclick="filterProducts('Wedding')">Wedding </button>
+<button onclick="filterProducts('Graduation')">Graduation</button>
+<button onclick="filterProducts('Traditional')">Traditional</button>
+</section>
+
+
+<!--================ PRODUCTS SECTION ================-->
+<section class="products">
+<h2>Our Kente Products</h2>
+<div id="products"></div>
+</section>
+
+
+
+<!--================ WHY CHOOSE US ================-->
+
+<section class="why">
+    <h2>Why Shop With Benkumhene?</h2>
+
+
+    <div class="features">
+        <div>
+            <i class="fas fa-award"></i>
+            <h3>Authentic Kente</h3>
+            <p>Directly sourced from Ghanaian master weavers.</p>
+        </div>
+
+        <div>
+            <i class="fas fa-truck"></i>
+            <h3>Worldwide Shipping</h3>
+            <p>Fast and secure international delivery.</p>
+        </div>
+
+        <div>
+            <i class="fas fa-lock"></i>
+            <h3>Secure Payments</h3>
+            <p>Safe online payment options.</p>
+        </div>
+
+        <div>
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>Customer support whenever you need assistance.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!--================ NEWSLETTER SECTION================-->
+<section class="newsletter">
+<h2>Subscribe to Our Newsletter</h2>
+<input type="email" placeholder="Enter your email">
+<button>Subscribe</button>
+</section>
+
+
+<!--================ FOOTER SECTION ================-->
+<footer>
+<p>Benkumhene Online Shop</p>
+<p>Authentic Ghanaian Traditional Kente Collection</p>
+
+<div class="social">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-whatsapp"></i>
+<i class="fab fa-youtube"></i>
+</div>
+</footer>
+<script src="kente_JS.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

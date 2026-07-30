@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wishlist | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.banner h1{
+    font-size:45px;
+}
+
+.banner p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+/* Container */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+    text-align:center;
+}
+
+.info h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:#198754;
+    font-size:24px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.cart-btn,
+.remove-btn{
+    border:none;
+    padding:10px 18px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.cart-btn{
+    background:#198754;
+    color:white;
+}
+
+.remove-btn{
+    background:#dc3545;
+    color:white;
+}
+
+.cart-btn:hover{
+    background:#146c43;
+}
+
+.remove-btn:hover{
+    background:#b02a37;
+}
+
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="wishlist.html">Wishlist</a>
+<a href="cart.html">Cart</a>
+<a href="account.html">My Account</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="banner">
+
+<h1>?? My Wishlist</h1>
+
+<p>Your favourite products saved for later.</p>
+
+</section>
+
+<div class="container">
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300x220?text=Mathematics+Book" alt="Book">
+
+<div class="info">
+
+<h3>Mathematics Book</h3>
+
+<p class="price">$20.00</p>
+
+<div class="buttons">
+
+<button class="cart-btn">
+?? Add to Cart
+</button>
+
+<button class="remove-btn">
+? Remove
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300x220?text=Herbal+Product" alt="Herbal Product">
+
+<div class="info">
+
+<h3>Herbal Capsules</h3>
+
+<p class="price">$15.00</p>
+
+<div class="buttons">
+
+<button class="cart-btn">
+?? Add to Cart
+</button>
+
+<button class="remove-btn">
+? Remove
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300x220?text=Laptop" alt="Laptop">
+
+<div class="info">
+
+<h3>Laptop</h3>
+
+<p class="price">$650.00</p>
+
+<div class="buttons">
+
+<button class="cart-btn">
+?? Add to Cart
+</button>
+
+<button class="remove-btn">
+? Remove
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Quality Products • Affordable Prices • Trusted Service</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Benkumhene Online Shop</title>
+
+</head>
+
+<body>
+
+<header>
+<div class="logo">BENKUMHENE ONLINE SHOP</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="payment.html">Payment</a>
+<a href="account.html">My Account</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="banner">
+<h1>Checkout</h1>
+<p>Complete your purchase securely.</p>
+</section>
+
+<div class="container"><!-- Customer Information --><div class="card">
+<h2>Shipping Information</h2>
+
+<form id="regForm">
+<label>Full Name</label>
+<input type="text" id="customerName" placeholder="Enter your full name" required>
+<label>Email Address</label>
+<input type="email" id="email" placeholder="Enter your email" required>
+<label>Phone Number</label>
+<input type="tel" id="regNumber" placeholder="Enter your phone number">
+<label>Street Address</label>
+<input type="text"  id="regAddress" placeholder="Enter your address" required>
+<label>City</label>
+<input type="text"  id="regCity" placeholder="Enter your city" required>
+<label>State / Region</label>
+<input type="text" id="regRegion" placeholder="Enter your state or region">
+<label>Country</label>
+
+<select>
+<option>United States</option>
+<option>Ghana</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+<option>Other</option>
+</select>
+
+<label>Postal / ZIP Code</label>
+<input type="text" id= "regPost" placeholder="ZIP / Postal Code">
+<label>Order Notes</label>
+<textarea rows="4"  id="regOrder" placeholder="Special delivery instructions (optional)"></textarea>
+<h2 style="margin-top:30px;">Payment Method</h2>
+<div class="payment-option">
+<input type="radio" id="regaCard" name="payment" checked>Debit Card</div>
+<div class="payment-option">
+<input type="radio" id="regPayment" name="payment">Credit Card<div class="payment-option">
+<input type="radio" id="regMobile" name="payment">Mobile Money</div>
+<button type="button" onclick="payNow()">Place Order & Pay</button>
+</form>
+</div>
+
+<!-- Order Summary -->
+<div id="orderSummary"></div>
+<h2>Total:<span id="totalOrder">$0.00</span></h2>
+<p style="margin-top:20px;">Secure Checkout<br>Fast Delivery<br>Trusted Payment Methods</p>
+</div>
+</div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const summary = document.getElementById("orderSummary");
+let subtotal = 0;
+
+cart.forEach(item => {
+    subtotal += item.price * item.quantity;
+
+    summary.innerHTML += `
+        <div class="summary-item">
+            <span>${item.name} × ${item.quantity}</span>
+            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        </div>
+    `;
+});
+
+const shipping = 15;
+const total = subtotal + shipping;
+
+summary.innerHTML += `
+    <hr>
+    <div class="summary-item">
+        <strong>Subtotal</strong>
+        <strong>$${subtotal.toFixed(2)}</strong>
+    </div>
+
+    <div class="summary-item">
+        <strong>Shipping</strong>
+        <strong>$${shipping.toFixed(2)}</strong>
+    </div>
+`;
+
+document.getElementById("totalOrder").textContent =
+"$" + total.toFixed(2);
+function payNow() {
+    const name = document.getElementById("customerName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("regNumber").value;
+
+    // Order total
+const totalText = document.getElementById("totalOrder").textContent;
+const amount = parseFloat(totalText.replace("$", ""));
+   let handler = PaystackPop.setup({
+        key: "pk_test_9dd143386966163c2926f4e157dd5cc94eba25eb",
+        email: email,
+        amount: amount * 100,
+        currency: "GHS",
+        firstname: name,
+        metadata: {
+            custom_fields: [
+                {
+                    display_name: "Phone",
+                    variable_name: "phone",
+                    value: phone
+                }
+            ]
+        },
+        callback: function(response){
+            alert("Payment Successful");
+            localStorage.setItem("paymentReference", response.reference);
+            window.location.href = "receipt.html";
+        },
+        onClose: function(){
+            alert("Payment Cancelled");
+        }
+    });
+    handler.openIframe();
+}
+</script>
+
+<footer>
+<h2>BENKUMHENE ONLINE SHOP</h2>
+<p>Quality Products • Affordable Prices • Trusted Service</p>
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+/* Layout */
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+    color:#198754;
+    margin-bottom:20px;
+}
+
+/* Form */
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.payment-option{
+    margin:12px 0;
+}
+
+.payment-option input{
+    width:auto;
+    margin-right:10px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:25px;
+    background:#198754;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+/* Order Summary */
+.summary-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.total{
+    font-size:22px;
+    color:#198754;
+    font-weight:bold;
+    border-top:2px solid #ddd;
+    padding-top:15px;
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+.container{
+grid-template-columns:1fr;
+}
+}
+</style>
+
+</html>

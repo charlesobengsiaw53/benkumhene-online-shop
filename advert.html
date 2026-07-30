@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Offers | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Hero Banner */
+
+.hero{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.hero .btn{
+    display:inline-block;
+    margin-top:25px;
+    background:white;
+    color:#198754;
+    padding:15px 30px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+.hero .btn:hover{
+    background:#f4f4f4;
+}
+
+/* Offers */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+h2{
+    text-align:center;
+    color:#198754;
+    margin-bottom:30px;
+}
+
+.offers{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.offer{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+    transition:0.3s;
+}
+
+.offer:hover{
+    transform:translateY(-5px);
+}
+
+.offer img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.offer-content{
+    padding:20px;
+    text-align:center;
+}
+
+.discount{
+    color:#dc3545;
+    font-size:24px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.price{
+    font-size:18px;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:#888;
+    margin-right:10px;
+}
+
+.new-price{
+    color:#198754;
+    font-weight:bold;
+}
+
+.buy-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#198754;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:5px;
+}
+
+.buy-btn:hover{
+    background:#146c43;
+}
+
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="product.html">Products</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>?? Mega Sale</h1>
+
+<p>Enjoy amazing discounts on selected products.</p>
+
+<a href="shop.html" class="btn">Shop Now</a>
+
+</section>
+
+<div class="container">
+
+<h2>Today's Special Offers</h2>
+
+<div class="offers">
+
+<div class="offer">
+
+<img src="https://via.placeholder.com/400x220?text=Mathematics+Book" alt="Mathematics Book">
+
+<div class="offer-content">
+
+<h3>Mathematics Book</h3>
+
+<div class="discount">25% OFF</div>
+
+<p class="price">
+<span class="old-price">$20.00</span>
+<span class="new-price">$15.00</span>
+</p>
+
+<a href="product.html" class="buy-btn">View Product</a>
+
+</div>
+
+</div>
+
+<div class="offer">
+
+<img src="https://via.placeholder.com/400x220?text=Herbal+Capsules" alt="Herbal Capsules">
+
+<div class="offer-content">
+
+<h3>Herbal Capsules</h3>
+
+<div class="discount">30% OFF</div>
+
+<p class="price">
+<span class="old-price">$15.00</span>
+<span class="new-price">$10.50</span>
+</p>
+
+<a href="product.html" class="buy-btn">View Product</a>
+
+</div>
+
+</div>
+
+<div class="offer">
+
+<img src="https://via.placeholder.com/400x220?text=Laptop" alt="Laptop">
+
+<div class="offer-content">
+
+<h3>Laptop</h3>
+
+<div class="discount">10% OFF</div>
+
+<p class="price">
+<span class="old-price">$650.00</span>
+<span class="new-price">$585.00</span>
+</p>
+
+<a href="product.html" class="buy-btn">View Product</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Special Offers • Quality Products • Great Prices</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

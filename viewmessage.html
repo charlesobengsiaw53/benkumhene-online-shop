@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Messages | Benkumhene Online Shop</title>
+</head>
+
+<body>
+<header>BENKUMHENE ONLINE SHOP<br>Customer Messages</header>
+
+<div class="container">
+<div class="searchBox"><input type="text" id="search" placeholder="Search Customer..."><button>Search</button></div>
+
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Customer</th>
+<th>Subject</th>
+<th>Email</th>
+<th>Date</th>
+<th>Status</th>
+<th>View</th>
+<th>Reply</th>
+<th>Delete</th>
+</tr>
+</thead>
+
+<tbody id="messageTable">
+</tbody>
+</table>
+</div>
+
+<!-- Message Modal -->
+<div class="modal" id="messageModal">
+<div class="modal-content">
+
+<span class="close">&times;</span>
+
+<h2>Customer Message</h2><hr><br>
+
+<h3>Customer Name</h3>
+<p id="customerName">John Doe</p><br>
+
+<h3>Email</h3>
+<p id="customerEmail">john@gmail.com</p><br>
+
+
+<h3>Subject</h3>
+<p id="customerSubject">Product Inquiry</p><br>
+
+<h3>Message</h3>
+<p id="customerMessage">Hello, I would like to know whether this product is available in blue.Thank you.</p>
+
+<hr><br>
+<h3>Reply</h3>
+<textarea id="reply" placeholder="Type your reply here..."></textarea>
+
+<button id="sendReplyBtn">Send Reply</button>
+<button id="aiReplyBtn" onclick="generateAIReply()">AI Reply</button>
+<button id="emailCustomerBtn"> Email Customer</button>
+</div>
+</div>
+
+
+
+<script>
+
+const modal = document.getElementById("messageModal");
+const close = document.querySelector(".close");
+
+close.onclick = function () {
+    modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
+
+const table = document.getElementById("messageTable");
+let messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+table.innerHTML = "";
+
+messages.forEach((msg, index) => {
+
+    table.innerHTML += `
+    <tr>
+        <td>${index + 1}</td>
+        <td>${msg.customer}</td>
+        <td>${msg.subject}</td>
+        <td>${msg.email}</td>
+        <td>${msg.date}</td>
+        <td>${msg.status}</td>
+
+        <td>
+            <button class="view" onclick="viewMessage(${index})">
+                View
+            </button>
+        </td>
+
+        <td>
+            <button class="reply" onclick="replyMessage(${index})">Reply </button>
+        </td>
+
+        <td>
+            <button class="delete" onclick="deleteMessage(${index})">Delete</button>
+        </td>
+    </tr>
+    `;
+});
+
+
+function viewMessage(index){
+
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+    let msg = messages[index];
+
+    document.getElementById("customerName").innerHTML = msg.customer;
+    document.getElementById("customerEmail").innerHTML = msg.email;
+    document.getElementById("customerSubject").innerHTML = msg.subject;
+    document.getElementById("customerMessage").innerHTML = msg.message;
+
+    modal.style.display = "block";
+}
+
+
+function deleteMessage(index){
+
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+    if(confirm("Delete this message?")){
+
+        messages.splice(index,1);
+
+        localStorage.setItem("messages", JSON.stringify(messages));
+
+        location.reload();
+    }
+}
+
+function replyMessage(index){
+
+    localStorage.setItem("selectedMessage", index);
+
+    viewMessage(index);
+
+}
+
+
+function sendReply() {
+
+    // Get the reply typed by the admin
+    const replyText = document.getElementById("reply").value.trim();
+
+    if (replyText === "") {
+        alert("Please type your reply.");
+        return;
+    }
+
+    // Selected customer message
+    const index = localStorage.getItem("selectedMessage");
+
+    // Read stored data
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+    let replies = JSON.parse(localStorage.getItem("replies")) || [];
+
+    // Current customer message
+    const msg = messages[index];
+
+    // Customer phone number
+    let phone = msg.phone || "";
+
+    // Convert Ghana numbers to international format
+    phone = phone.replace(/\s+/g, "");
+
+    if (phone.startsWith("0")) {
+        phone = "233" + phone.substring(1);
+    }
+
+    // Save reply for customer's account
+    replies.push({
+        customer: msg.customer,
+        email: msg.email,
+        phone: msg.phone,
+        subject: msg.subject,
+        message: msg.message,
+        reply: replyText,
+        date: new Date().toLocaleString(),
+        status: "Unread"
+    });
+
+    localStorage.setItem("replies", JSON.stringify(replies));
+
+    // Update original message
+    messages[index].reply = replyText;
+    messages[index].replyDate = new Date().toLocaleString();
+    messages[index].replyStatus = "Replied";
+    messages[index].status = "Read";
+
+    localStorage.setItem("messages", JSON.stringify(messages));
+
+    // Send through WhatsApp if a phone number exists
+    if (phone !== "") {
+        window.open(
+            `https://wa.me/${phone}?text=${encodeURIComponent(replyText)}`,
+            "_blank"
+        );
+    }
+
+    alert("Reply sent successfully.");
+
+    // Clear reply box
+    document.getElementById("reply").value = "";
+
+    // Close the modal
+    document.getElementById("messageModal").style.display = "none";
+
+    // Refresh the table so the new status appears
+    location.reload();
+}
+
+function emailReply() {
+
+    const index = localStorage.getItem("selectedMessage");
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+    const customerEmail = messages[index].email;
+    const reply = document.getElementById("reply").value.trim();
+
+    if (reply === "") {
+        alert("Please type your reply.");
+        return;
+    }
+
+    const subject = "Reply from Benkumhene Online Shop";
+
+    window.open(
+        `mailto:${customerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(reply)}`,
+        "_self"
+
+`mailto:${customerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(reply)}`;
+}
+
+
+
+
+
+
+const API_KEY="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",
+
+
+
+
+
+
+
+
+
+
+async function generateAIReply() {
+
+    const customerMessage =
+        document.getElementById("message").textContent;
+
+    const replyBox =
+        document.getElementById("reply");
+
+    replyBox.value = "Generating AI reply...";
+
+    try {
+
+        const response = await fetch("YOUR_PHP_FILE.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                message: customerMessage
+            })
+        });
+
+        const data = await response.json();
+
+        replyBox.value = data.reply;
+
+    } catch (error) {
+
+        replyBox.value =
+            "Unable to generate AI reply.";
+
+        console.error(error);
+    }
+}
+
+
+
+
+
+</script>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* Header */
+
+header{
+    background:#004d40;
+    color:white;
+    padding:18px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* Container */
+
+.container{
+    width:95%;
+    margin:30px auto;
+}
+
+/* Search */
+
+.searchBox{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.searchBox input{
+
+    width:350px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+
+}
+
+.searchBox button{
+
+    padding:12px 25px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+.searchBox button:hover{
+
+    background:#084298;
+
+}
+
+/* Table */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+
+}
+
+th{
+
+    background:#004d40;
+    color:white;
+    padding:15px;
+
+}
+
+td{
+
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+
+}
+
+tr:hover{
+
+    background:#f1f1f1;
+
+}
+
+/* Buttons */
+
+.view{
+
+    background:green;
+    color:white;
+    padding:8px 15px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+
+}
+
+.delete{
+
+    background:red;
+    color:white;
+    padding:8px 15px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+
+}
+
+.reply{
+
+    background:#0d6efd;
+    color:white;
+    padding:8px 15px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+
+}
+
+/* Modal */
+
+.modal{
+
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+
+}
+
+.modal-content{
+
+    width:60%;
+    margin:60px auto;
+    background:white;
+    padding:25px;
+    border-radius:8px;
+
+}
+
+.close{
+
+    float:right;
+    font-size:30px;
+    cursor:pointer;
+    color:red;
+
+}
+
+textarea{
+
+    width:100%;
+    height:150px;
+    padding:10px;
+    margin-top:10px;
+
+}
+
+.send{
+
+    margin-top:15px;
+    background:#198754;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+
+</style>
+</html>

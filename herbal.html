@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--================ HEADING SECTION ================-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benkumhene Herbal Shop</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="herbal_CSS.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+
+<body>
+<!--================ NAVIGATION SECTION ================-->
+<header>
+<div class="logo">
+<h1>BENKUMHENE HERBAL SHOP</h1>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="kente.html">Kente</a>
+<a href="bags.html">Bags</a>
+<a href="herbal.html" class="active">Herbal</a>
+<a href="contact.html">Contact</a>
+<a href="about.html">About</a>
+<a href="add.html">Add Product</a>
+</nav>
+
+<div class="icons">
+<input type="text" placeholder="Search Herbal Products">
+<i class="fa-solid fa-magnifying-glass"></i>
+<a href="cart.html">
+<i class="fa-solid fa-cart-shopping"></i>
+<span id="cart-count">0</span>
+</a>
+</div>
+</header>
+
+
+<!--================ HERO SECTION ================-->
+<section class="hero">
+<h1>Natural Herbal Products</h1>
+<p>Healthy Living Begins with Nature</p>
+<a href="#products"><button>Shop Now</button></a>
+</section>
+
+
+
+<!--================ CATEGORIES SECTION ================-->
+<section class="categories">
+<h2>Herbal Categories</h2>
+<div class="category-box">
+<div onclick="filterProducts('all')">All Products</div>
+<div onclick="filterProducts('mixtures')">Herbal Mixtures</div>
+<div onclick="filterProducts('cream')">Herbal Creams</div>
+<div onclick="filterProducts('soap')">Herbal Soap</div>
+<div onclick="filterProducts('honey')">Herbal Honey</div>
+<div onclick="filterProducts('tea')">Herbal Tea</div>
+<div onclick="filterProducts('capsule')">Herbal Capsules</div>
+</div>
+</section>
+
+
+<!--================ PRODUCTS SECTION ================-->
+     <div id="products"></div>
+
+
+
+
+<!--================ BENEFITS SECTION ================-->
+<section class="benefits">
+<h2>Why Buy From Benkumhene?</h2>
+<div class="benefit-box">
+<div>
+<h3>100% Natural</h3>
+<p>Made from quality herbal ingredients.</p>
+</div>
+
+<div>
+<h3>Fast Delivery</h3>
+<p>Worldwide shipping available.</p>
+</div>
+
+<div>
+<h3>Secure Payment</h3>
+<p>Safe online payment options.</p>
+</div>
+
+<div>
+<h3>Quality Assurance</h3>
+<p>Trusted herbal products.</p>
+</div>
+</div>
+</section>
+
+
+
+<!--================ FOOTER SECTION ================-->
+<footer>
+<p>© 2026 Benkumhene Herbal Shop. All Rights Reserved.</p>
+</footer>
+<script src="herbal_JS.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

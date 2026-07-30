@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details | Benkumhene Online Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.product{
+    background:white;
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.image{
+    flex:1;
+    min-width:300px;
+}
+
+.image img{
+    width:100%;
+    border-radius:10px;
+}
+
+.details{
+    flex:1;
+    min-width:300px;
+}
+
+.details h1{
+    color:#198754;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#e53935;
+    font-size:30px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.rating{
+    color:#ffc107;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.description{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input[type=number]{
+    width:80px;
+    padding:10px;
+    margin:10px 0 20px;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    margin-right:10px;
+}
+
+.cart{
+    background:#198754;
+    color:white;
+}
+
+.buy{
+    background:#ffc107;
+    color:black;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.features{
+    background:white;
+    margin-top:30px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.features h2{
+    color:#198754;
+    margin-bottom:15px;
+}
+
+.features ul{
+    padding-left:20px;
+}
+
+.features li{
+    margin:10px 0;
+}
+
+footer{
+    margin-top:40px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+.product{
+    flex-direction:column;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="cart.html">Cart</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="product">
+
+<div class="image">
+<img src="https://via.placeholder.com/500x500?text=Product+Image" alt="Product Image">
+</div>
+
+<div class="details">
+
+<h1>Mathematics Textbook</h1>
+
+<div class="rating">
+????? (4.8/5)
+</div>
+
+<p class="price">$25.00</p>
+
+<p class="description">
+This Mathematics textbook is designed for students and teachers. It contains clear explanations, worked examples, practice exercises, and revision questions to support effective learning.
+</p>
+
+<label>Quantity</label><br>
+
+<input type="number" value="1" min="1">
+
+<br>
+
+<button class="cart">?? Add to Cart</button>
+
+<button class="buy">Buy Now</button>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<h2>Product Features</h2>
+
+<ul>
+<li>? High-quality educational content</li>
+<li>? Durable printed edition</li>
+<li>? Suitable for students and teachers</li>
+<li>? Fast delivery available</li>
+<li>? Secure online shopping</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Quality Products • Affordable Prices • Trusted Service</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

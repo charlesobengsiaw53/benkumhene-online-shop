@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account | Benkumhene Online Shop</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6f9;
+}
+
+header{
+    background:#004d40;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    margin-bottom:20px;
+}
+
+.reply{
+    border-left:6px solid green;
+}
+
+.reply h3{
+    color:#004d40;
+}
+
+.date{
+    color:gray;
+    font-size:14px;
+}
+
+.empty{
+    text-align:center;
+    color:gray;
+    font-size:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+BENKUMHENE ONLINE SHOP
+
+<br>
+
+MY ACCOUNT
+
+</header>
+
+<div class="container">
+
+<h2>Replies From Admin</h2>
+
+<div id="replyContainer">
+
+</div>
+
+</div>
+
+
+
+
+<script>
+
+const customerEmail = localStorage.getItem("loggedInEmail");
+
+const replies =
+JSON.parse(localStorage.getItem("replies")) || [];
+
+const container =
+document.getElementById("replyContainer");
+
+const myReplies =
+replies.filter(reply=>reply.email===customerEmail);
+
+if(myReplies.length===0){
+
+container.innerHTML=`
+
+<div class="card empty">
+
+No replies yet.
+
+</div>
+
+`;
+
+}else{
+
+myReplies.forEach(reply=>{
+
+container.innerHTML+=`
+
+<div class="card reply">
+
+<h3>Subject</h3>
+
+<p>${reply.subject}</p>
+
+<h3>Reply</h3>
+
+<p>${reply.reply}</p>
+
+<p class="date">
+
+${reply.date}
+
+</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Product | Benkumhene Online Shop</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+.container{
+    width:85%;
+    max-width:700px;
+    margin:20px auto;
+    padding:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+.full-width{
+    grid-column:1 / 3;
+}
+
+h1{
+font-size: 28px;
+    text-align:center;
+    color:#198754;
+    margin-bottom:30px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.preview{
+    text-align:center;
+    margin:20px 0;
+}
+
+.preview img{
+    width:160px;
+    height:160px;
+    border-radius:10px;
+    border:2px solid #198754;
+    object-fit:cover;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.save{
+    flex:1;
+    background:#198754;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.cancel{
+    flex:1;
+    background:#6c757d;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:5px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.save:hover{
+    background:#146c43;
+}
+
+.cancel:hover{
+    background:#5a6268;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+.form-group{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.form-group label{
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:10px;
+}
+
+.id-search{
+    display:flex;
+    gap:10px;
+    width:100%;
+}
+
+.id-search input{
+    flex:1;
+}
+
+#loadProduct{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+#loadProduct:hover{
+    background:#146c43;
+}
+</style>
+</head>
+
+<body>
+<header>
+<div class="logo">BENKUMHENE ONLINE SHOP</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="adminlogin.html">Admin</a>
+</nav>
+</header>
+<div class="container">
+<h1>Edit Product</h1>
+<form id="editForm">
+<div class="form-group">
+    <label>Product ID</label>
+    <div class="id-search">
+        <input type="text" id="productId">
+        <button type="button" id="loadProduct">Load Product</button>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Product Name</label>
+    <input type="text" id="name">
+</div>
+
+<div class="form-group">
+    <label>Category</label>
+    <select id="category">
+        <option>Kente</option>
+        <option>Bags</option>
+        <option>Shoes</option>
+        <option>Books</option>
+        <option>Herbal Products</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Stock Quantity</label>
+    <input type="number" id="stock" min="0">
+</div>
+
+<div class="form-group">
+    <label>Brand</label>
+    <input type="text" id="brand">
+</div>
+
+
+<div class="form-group">
+    <label>Weight (kg)</label>
+    <input type="number" id="weight" step="0.01">
+</div>
+
+<div class="form-group">
+    <label>Discount (%)</label>
+    <input type="number" id="discount" min="0" max="100">
+</div>
+
+<div class="form-group">
+    <label>Price ($)</label>
+   <input type="number" id="price" min="0" step="0.01">
+</div>
+<div class="form-group">
+    <label>Product Status</label>
+    <select id="status">
+    <option>Available</option>
+    <option>Out of Stock</option>
+    <option>Hidden</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Description</label>
+    <textarea id="description" rows="4"></textarea>
+</div>
+
+<div class="form-group">
+    <label>Product Image</label>
+    <input type="file" id="image" accept="image/*">
+</div>
+
+<div class="preview">
+    <img id="previewImage" src="" alt="Product Image">
+</div>
+
+<div class="buttons">
+    <button type="submit" class="save">Save Changes</button>
+    <button type="reset" class="cancel">Cancel</button>
+</div>
+</form>
+</div>
+
+<footer>
+<h2>BENKUMHENE ONLINE SHOP</h2>
+<p>Product Management System</p>
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+</footer>
+
+<script src="edit_JS.js"></script>
+</body>
+</html>

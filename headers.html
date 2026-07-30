@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top Header */
+
+.top-header{
+    background:#198754;
+    color:white;
+    padding:10px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.top-header .left{
+    font-size:14px;
+}
+
+.top-header .right a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.top-header .right a:hover{
+    color:#ffc107;
+}
+
+/* Main Header */
+
+.main-header{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#198754;
+}
+
+.logo span{
+    color:#ffc107;
+}
+
+.search-box{
+    flex:1;
+    margin:15px 40px;
+}
+
+.search-box input{
+    width:100%;
+    padding:12px;
+    border:2px solid #198754;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.icons{
+    display:flex;
+    gap:20px;
+}
+
+.icons a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+}
+
+.icons a:hover{
+    color:#198754;
+}
+
+/* Navigation */
+
+nav{
+    background:#145c32;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.main-header{
+    flex-direction:column;
+}
+
+.search-box{
+    width:100%;
+    margin:20px 0;
+}
+
+.icons{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav a{
+    display:inline-block;
+    margin:10px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Top Header -->
+
+<div class="top-header">
+
+<div class="left">
+?? +1 (000) 000-0000 | ?? info@benkumhene.com
+</div>
+
+<div class="right">
+<a href="login.html">Login</a>
+<a href="register.html">Register</a>
+<a href="contact.html">Support</a>
+</div>
+
+</div>
+
+<!-- Main Header -->
+
+<div class="main-header">
+
+<div class="logo">
+?? BENKUMHENE <span>ONLINE SHOP</span>
+</div>
+
+<div class="search-box">
+
+<input type="text" placeholder="Search for products...">
+
+</div>
+
+<div class="icons">
+
+<a href="wishlist.html">?? Wishlist</a>
+
+<a href="cart.html">?? Cart</a>
+
+<a href="account.html">?? My Account</a>
+
+</div>
+
+</div>
+
+<!-- Navigation -->
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="productsearch.html">Search</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="faq.html">FAQ</a>
+
+<a href="review.html">Reviews</a>
+
+</nav>
+<script src="script.js"></script>
+</body>
+</html>

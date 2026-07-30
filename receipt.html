@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Invoice | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:30px;
+}
+
+.invoice{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid #198754;
+    padding-bottom:20px;
+    margin-bottom:30px;
+}
+
+.logo{
+    color:#198754;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.invoice-title{
+    text-align:right;
+}
+
+.invoice-title h2{
+    color:#198754;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.info div{
+    width:45%;
+}
+
+.info h3{
+    color:#198754;
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th{
+    background:#198754;
+    color:white;
+    padding:12px;
+}
+
+table td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.total{
+    text-align:right;
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+    color:#198754;
+}
+
+.note{
+    margin-top:30px;
+    background:#f8f9fa;
+    padding:20px;
+    border-left:5px solid #198754;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:30px;
+}
+
+button{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    margin:10px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+@media print{
+
+button{
+    display:none;
+}
+
+body{
+    background:white;
+    padding:0;
+}
+
+.invoice{
+    box-shadow:none;
+    border:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="invoice">
+
+<div class="header">
+
+<div class="logo">BENKUMHENE ONLINE SHOP</div>
+
+<div class="invoice-title">
+<h2>INVOICE</h2>
+
+<p>Invoice No: <span id="invoiceNo"></span></p>
+
+<p>Date: <span id="invoiceDate"></span></p>
+<p>Payment Ref: <span id="paymentReference"></span></p>
+
+</div>
+</div>
+
+
+<div class="info">
+
+<h3>Customer</h3>
+
+<p id="customerName"></p>
+<p id="customerAddress"></p>
+<p id="customerCity"></p>
+<p id="customerCountry"></p>
+<p id="customerEmail"></p>
+<p id="customerPhone"></p>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody id="receiptItems">
+
+    </tbody>
+
+</table>
+
+<div class="total">
+Grand Total:
+<span id="grandTotal">$0.00</span>
+</div>
+
+<div class="note">
+<strong>Thank you for shopping with Benkumhene Online Shop.</strong><br><br>
+Please keep this invoice for your records. If you have any questions about your order, contact our customer support team.
+</div>
+
+<div class="buttons">
+
+<button onclick="window.print()">Print Invoice</button>
+
+<button onclick="window.location.href='order.html'">Back to Orders</button>
+
+</div>
+
+</div>
+
+<script>
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const customer = JSON.parse(localStorage.getItem("customer")) || {};
+
+const paymentReference =
+localStorage.getItem("paymentReference") || "N/A";
+
+const invoiceNo =
+"INV-" + Math.floor(Math.random() * 1000000);
+
+
+document.getElementById("invoiceNo").textContent = invoiceNo;
+document.getElementById("paymentReference").textContent =
+paymentReference;
+
+// Display today's date
+document.getElementById("invoiceDate").textContent =
+new Date().toLocaleDateString();
+
+// Display customer information
+document.getElementById("customerName").textContent =
+customer.name || "";
+
+document.getElementById("customerAddress").textContent =
+customer.address || "";
+
+document.getElementById("customerCity").textContent =
+customer.city || "";
+
+document.getElementById("customerCountry").textContent =
+customer.country || "";
+
+document.getElementById("customerEmail").textContent =
+customer.email || "";
+
+document.getElementById("customerPhone").textContent =
+customer.phone || "";
+const receiptItems = document.getElementById("receiptItems");
+
+let subtotal = 0;
+
+cart.forEach(item => {
+
+    const quantity = item.quantity || 1;
+const total = item.price * quantity;
+
+subtotal += total;
+
+receiptItems.innerHTML += `
+<tr>
+    <td>${item.name}</td>
+    <td>${quantity}</td>
+    <td>$${item.price.toFixed(2)}</td>
+    <td>$${total.toFixed(2)}</td>
+</tr>
+`;
+});
+
+const shipping = 15;
+
+const grandTotal = subtotal + shipping;
+
+receiptItems.innerHTML += `
+    <tr>
+        <td colspan="3"><strong>Shipping</strong></td>
+        <td>$${shipping.toFixed(2)}</td>
+    </tr>
+`;
+
+document.getElementById("grandTotal").textContent =
+"$" + grandTotal.toFixed(2);
+
+
+
+
+
+
+
+
+</script>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purchase History | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+/* Container */
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.history-table{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#198754;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+.status{
+    padding:6px 12px;
+    border-radius:20px;
+    color:white;
+    font-weight:bold;
+}
+
+.completed{
+    background:#28a745;
+}
+
+.processing{
+    background:#ff9800;
+}
+
+.shipped{
+    background:#2196f3;
+}
+
+.cancelled{
+    background:#dc3545;
+}
+
+button{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+.summary{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+    color:#198754;
+}
+
+.number{
+    font-size:35px;
+    color:#198754;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+/* Footer */
+
+footer{
+    margin-top:40px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.history-table{
+    overflow-x:auto;
+}
+
+table{
+    min-width:900px;
+}
+
+}
+</style>
+
+</head>
+
+
+<body>
+<header>
+<div class="logo">BENKUMHENE ONLINE SHOP</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="user.html">Dashboard</a>
+<a href="order.html">Orders</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+<section class="banner">
+<h1>Purchase History</h1>
+<p>View all your previous orders.</p>
+</section>
+
+<body>
+<table border="1" width="100%">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Date</th>
+<th>status</th>
+<th>payment</th>
+        </tr>
+    </thead>
+
+    <tbody id="historyTable">
+
+    </tbody>
+</table>
+
+
+<script>
+const historyTable = document.getElementById("historyTable");
+
+let history = JSON.parse(localStorage.getItem("shippingHistory")) || [];
+
+history.forEach((customer, index)=>{
+
+    historyTable.innerHTML += `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${customer.fullname}</td>
+            <td>${customer.phone}</td>
+            <td>${customer.email}</td>
+            <td>${customer.address}</td>
+            <td>${customer.city}</td>
+            <td>${customer.country}</td>
+            <td>${customer.date}</td>
+        </tr>
+    `;
+
+});
+
+
+
+
+
+</script>
+
+
+
+<footer>
+<h2>BENKUMHENE ONLINE SHOP</h2>
+<p>Trusted Shopping • Secure Payments • Fast Delivery</p>
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+</body>
+ </html>

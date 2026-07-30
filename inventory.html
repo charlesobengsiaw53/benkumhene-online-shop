@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Management | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+/* Summary Cards */
+
+.summary{
+    width:95%;
+    max-width:1200px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+    color:#198754;
+}
+
+.card .number{
+    font-size:34px;
+    font-weight:bold;
+    color:#198754;
+    margin-top:10px;
+}
+
+/* Inventory Table */
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.table-box{
+    background:white;
+    border-radius:10px;
+    overflow-x:auto;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#198754;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+.instock{
+    color:green;
+    font-weight:bold;
+}
+
+.lowstock{
+    color:#ff9800;
+    font-weight:bold;
+}
+
+.outstock{
+    color:red;
+    font-weight:bold;
+}
+
+button{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+
+<a href="add.html">Add Product</a>
+<a href="edit.html">Edit</a>
+<a href="delete.html">Delete</a>
+<a href="history.html">History</a>
+
+
+
+</header>
+
+<section class="banner">
+
+<h1>Inventory Management</h1>
+
+<p>Monitor stock levels and product availability.</p>
+
+</section>
+
+<!-- Summary -->
+
+<div class="summary">
+
+<div class="card">
+<h2>Total Products</h2>
+<div class="number">350</div>
+</div>
+
+<div class="card">
+<h2>In Stock</h2>
+<div class="number">310</div>
+</div>
+
+<div class="card">
+<h2>Low Stock</h2>
+<div class="number">28</div>
+</div>
+
+<div class="card">
+<h2>Out of Stock</h2>
+<div class="number">12</div>
+</div>
+
+</div>
+
+<!-- Inventory Table -->
+
+<div class="container">
+
+<div class="table-box">
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Product</th>
+<th>Category</th>
+<th>Price</th>
+<th>Stock</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>P001</td>
+<td>Mathematics Book</td>
+<td>Books</td>
+<td>$20.00</td>
+<td>120</td>
+<td class="instock">In Stock</td>
+<td><button>Edit</button></td>
+</tr>
+
+<tr>
+<td>P002</td>
+<td>Herbal Capsules</td>
+<td>Herbal</td>
+<td>$15.00</td>
+<td>18</td>
+<td class="lowstock">Low Stock</td>
+<td><button>Edit</button></td>
+</tr>
+
+<tr>
+<td>P003</td>
+<td>Laptop</td>
+<td>Electronics</td>
+<td>$650.00</td>
+<td>0</td>
+<td class="outstock">Out of Stock</td>
+<td><button>Restock</button></td>
+</tr>
+
+<tr>
+<td>P004</td>
+<td>Smartphone</td>
+<td>Electronics</td>
+<td>$299.00</td>
+<td>65</td>
+<td class="instock">In Stock</td>
+<td><button>Edit</button></td>
+</tr>
+
+<tr>
+<td>P005</td>
+<td>T-Shirt</td>
+<td>Clothing</td>
+<td>$25.00</td>
+<td>8</td>
+<td class="lowstock">Low Stock</td>
+<td><button>Edit</button></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Inventory Management System</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

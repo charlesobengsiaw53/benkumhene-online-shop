@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Money Payment | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h1{
+    font-size:46px;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+}
+
+/* Container */
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+}
+
+.payment-box{
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.payment-box h2{
+    color:#198754;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    background:#198754;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+.notice{
+    margin-top:25px;
+    background:#e9f7ef;
+    border-left:5px solid #198754;
+    padding:15px;
+}
+
+footer{
+    margin-top:40px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="checkout.html">Checkout</a>
+<a href="payment.html">Payments</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Mobile Money Payment</h1>
+
+<p>Pay securely using your preferred Mobile Money provider.</p>
+
+</section>
+
+<div class="container">
+
+<div class="payment-box">
+
+<h2>Complete Your Payment</h2>
+
+<form>
+
+<label>Mobile Money Network</label>
+
+<select>
+
+<option>Select Network</option>
+
+<option>MTN Mobile Money</option>
+
+<option>Telecel Cash</option>
+
+<option>AirtelTigo Money</option>
+
+<option>Other Mobile Wallet</option>
+
+</select>
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+placeholder="e.g. 0241234567">
+
+<label>Account Name</label>
+
+<input
+type="text"
+placeholder="Enter registered account name">
+
+<label>Order Number</label>
+
+<input
+type="text"
+placeholder="Order ID">
+
+<label>Amount (USD)</label>
+
+<input
+type="number"
+placeholder="Enter payment amount">
+
+<button type="submit">
+
+?? Pay with Mobile Money
+
+</button>
+
+</form>
+
+<div class="notice">
+
+<strong>Payment Instructions</strong>
+
+<ul style="margin-top:10px;padding-left:20px;line-height:1.8;">
+
+<li>Verify your mobile number before proceeding.</li>
+
+<li>Approve the payment prompt on your mobile phone.</li>
+
+<li>Keep your transaction reference for future inquiries.</li>
+
+<li>Never share your Mobile Money PIN with anyone.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Secure Payments • Fast Checkout • Trusted Service</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

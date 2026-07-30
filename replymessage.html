@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Customer Message</title>
+
+<style>
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+}
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2{
+    text-align:center;
+    color:#198754;
+}
+
+.info{
+    margin:15px 0;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-bottom:5px;
+}
+
+.value{
+    padding:10px;
+    background:#f8f8f8;
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+
+.message-box{
+    min-height:180px;
+    white-space:pre-wrap;
+}
+
+.buttons{
+    margin-top:25px;
+    display:flex;
+    gap:10px;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+}
+
+.reply{
+    background:#198754;
+}
+
+.back{
+    background:#6c757d;
+}
+
+.delete{
+    background:#dc3545;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Customer Message</h2>
+
+<div class="info">
+<label>Customer Name</label>
+<div class="value" id="fullname"></div>
+</div>
+
+<div class="info">
+<label>Email Address</label>
+<div class="value" id="email"></div>
+</div>
+
+<div class="info">
+<label>Phone Number</label>
+<div class="value" id="phone"></div>
+</div>
+
+<div class="info">
+<label>Subject</label>
+<div class="value" id="subject"></div>
+</div>
+
+<div class="info">
+<label>Date</label>
+<div class="value" id="date"></div>
+</div>
+
+<div class="info">
+<label>Message</label>
+<div class="value message-box" id="message"></div>
+</div>
+
+<div class="buttons">
+
+<button class="reply" onclick="replyMessage()">
+Reply
+</button>
+
+<button class="delete" onclick="deleteMessage()">
+Delete
+</button>
+
+<button class="back" onclick="history.back()">
+Back
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const index = localStorage.getItem("selectedMessage");
+
+let messages =
+JSON.parse(localStorage.getItem("messages")) || [];
+
+const msg = messages[index];
+
+if(msg){
+
+document.getElementById("fullname").textContent = msg.fullname;
+document.getElementById("email").textContent = msg.email;
+document.getElementById("phone").textContent = msg.phone;
+document.getElementById("subject").textContent = msg.subject;
+document.getElementById("date").textContent = msg.date;
+document.getElementById("message").textContent = msg.message;
+
+/* Mark message as Read */
+msg.status = "Read";
+localStorage.setItem("messages", JSON.stringify(messages));
+
+}
+
+function replyMessage(){
+
+window.location.href = "replymessage.html";
+
+}
+
+function deleteMessage(){
+
+if(confirm("Delete this message?")){
+
+messages.splice(index,1);
+
+localStorage.setItem("messages", JSON.stringify(messages));
+
+window.location.href = "adminmessage.html";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

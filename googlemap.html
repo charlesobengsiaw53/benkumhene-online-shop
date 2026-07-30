@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Location | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+.banner p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* Layout */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:30px;
+}
+
+.info{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.info h2{
+    color:#198754;
+    margin-bottom:20px;
+}
+
+.info p{
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+.map{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.map iframe{
+    width:100%;
+    height:500px;
+    border:0;
+    border-radius:8px;
+}
+
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="contact.html">Contact</a>
+<a href="about.html">About</a>
+
+</nav>
+
+</header>
+<section class="banner">
+<h1>Visit Our Store</h1>
+<p>Find our location and contact information below.</p>
+</section>
+
+<div class="container">
+<div class="info">
+<h2>Business Information</h2>
+<p><strong>Business Name:</strong> Benkumhene Online Shop</p>
+<p><strong>Address:</strong> 123 Main Street, Your City, Your Country</p>
+<p><strong>Phone:</strong> +1 (000) 000-0000</p>
+<p><strong>Email:</strong> info@benkumhene.com</p>
+<p><strong>Business Hours:</strong></p>
+<p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+<p>Saturday: 9:00 AM - 4:00 PM</p>
+<p>Sunday: Closed</p>
+</div>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=New+York&output=embed" loading="lazy" allowfullscreen></iframe>
+</div>
+</div>
+
+
+
+
+<p>Find Us • Visit Us • Shop With Confidence</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

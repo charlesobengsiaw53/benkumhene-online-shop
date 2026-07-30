@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benkumhene Video Center</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:20px;
+}
+
+/* Videos */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.section-title{
+    text-align:center;
+    color:#198754;
+    margin-bottom:30px;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+}
+
+.video-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.video-card video{
+    width:100%;
+    height:250px;
+    background:black;
+}
+
+.video-content{
+    padding:20px;
+}
+
+.video-content h3{
+    color:#198754;
+    margin-bottom:10px;
+}
+
+.video-content p{
+    color:#555;
+    line-height:1.7;
+}
+
+/* Footer */
+
+footer{
+    margin-top:40px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="advert.html">Offers</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Video Center</h1>
+
+<p>Watch product demonstrations, promotions, and tutorials.</p>
+
+</section>
+
+<div class="container">
+
+<h2 class="section-title">
+Featured Videos
+</h2>
+
+<div class="video-grid">
+
+<div class="video-card">
+
+<video controls>
+
+<source src="videos/promo.mp4" type="video/mp4">
+
+Your browser does not support HTML5 video.
+
+</video>
+
+<div class="video-content">
+
+<h3>Store Introduction</h3>
+
+<p>
+Welcome to Benkumhene Online Shop. Learn about our products and services.
+</p>
+
+</div>
+
+</div>
+
+<div class="video-card">
+
+<video controls>
+
+<source src="videos/herbal.mp4" type="video/mp4">
+
+Your browser does not support HTML5 video.
+
+</video>
+
+<div class="video-content">
+
+<h3>Herbal Products</h3>
+
+<p>
+Watch how our herbal products are packaged and used.
+</p>
+
+</div>
+
+</div>
+
+<div class="video-card">
+
+<video controls>
+
+<source src="videos/books.mp4" type="video/mp4">
+
+Your browser does not support HTML5 video.
+
+</video>
+
+<div class="video-content">
+
+<h3>Educational Books</h3>
+
+<p>
+Discover our Mathematics, Science, and educational resources.
+</p>
+
+</div>
+
+</div>
+
+<div class="video-card">
+
+<video controls>
+
+<source src="videos/electronics.mp4" type="video/mp4">
+
+Your browser does not support HTML5 video.
+
+</video>
+
+<div class="video-content">
+
+<h3>Electronics Showcase</h3>
+
+<p>
+Explore our latest laptops, smartphones, and accessories.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Watch • Learn • Shop with Confidence</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

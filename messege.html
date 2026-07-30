@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send Message | Benkumhene Online Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:60px;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+.banner p{
+    margin-top:10px;
+}
+
+/* Form */
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+}
+
+.form-box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.form-box h2{
+    color:#198754;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    background:#198754;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+.info{
+    margin-top:20px;
+    background:#e9f7ef;
+    padding:15px;
+    border-left:5px solid #198754;
+}
+
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="contact.html">Contact</a>
+<a href="account.html">My Account</a>
+
+</nav>
+
+</header>
+<section class="banner">
+<h1>Send Us a Message</h1>
+<p>We're here to help you with any questions.</p>
+</section>
+
+<div class="container">
+<div class="form-box">
+<h2>Customer Support</h2>
+
+<form id="message">
+<label>Customer</label>
+<input type="text" id="customer" placeholder="Enter your full name" required>
+
+<label>Email Address</label>
+<input type="email" id= "email" placeholder="Enter your email address" required>
+
+<label>Phone Number</label>
+<input type="tel" id="phone" placeholder="Enter your phone number">
+
+<label>Subject</label>
+<input type="text" id="subject" placeholder="Enter message subject" required>
+
+<label>Your Message</label>
+<textarea rows="8" id="notes" placeholder="Type your message here..." required></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+<div class="info">
+<strong>Customer Support Hours</strong>
+<p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+<p>Saturday: 9:00 AM - 4:00 PM</p>
+<p>Sunday: Closed</p>
+
+</div>
+</div>
+</div>
+
+
+<script>
+document.getElementById("message").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const message = {
+
+        customer: document.getElementById("customer").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("notes").value,
+        date: new Date().toLocaleString(),
+        status: "Unread"
+
+    };
+
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+    messages.push(message);
+
+    localStorage.setItem("messages", JSON.stringify(messages));
+
+    alert("Message sent successfully.");
+
+    document.getElementById("message").reset();
+
+    // Optional: Go back to the home page
+    // window.location.href = "index.html";
+
+});
+</script>
+
+<footer>
+
+<h2>BENKUMHENE ONLINE SHOP</h2>
+
+<p>Quality Products • Affordable Prices • Excellent Customer Service</p>
+
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

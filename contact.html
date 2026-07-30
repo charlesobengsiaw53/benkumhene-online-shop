@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Benkumhene Online Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Header */
+header{
+    background:#198754;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Banner */
+.banner{
+    background:linear-gradient(to right,#198754,#ffc107);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.banner h1{
+    font-size:48px;
+}
+
+.banner p{
+    margin-top:15px;
+    font-size:20px;
+}
+
+/* Contact Section */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+    color:#198754;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    background:#198754;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#146c43;
+}
+
+.info p{
+    margin:15px 0;
+    font-size:17px;
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+.container{
+grid-template-columns:1fr;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+BENKUMHENE ONLINE SHOP
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="cart.html">Cart</a>
+<a href="login.html">Login</a>
+</nav>
+
+</header>
+
+<section class="banner">
+<h1>Contact Us</h1>
+<p>We are here to help you.</p>
+</section>
+
+<div class="container">
+<div class="card">
+<h2>Send Us a Message</h2>
+
+<form>
+<label>Full Name</label>
+<input type="text" placeholder="Enter your full name" required>
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+<label>Subject</label>
+<input type="text" placeholder="Enter subject" required>
+<label>Message</label>
+<textarea rows="6" placeholder="Write your message here..." required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+<div class="card info">
+<h2>Contact Information</h2>
+<p><strong>Business Name:</strong> Benkumhene Online Shop</p>
+<p><strong>Address:</strong>Your Business Address</p>
+<p><strong>Phone:</strong> +1 (571) 702-5754</p>
+<p><strong>Email:</strong> info@benkumhene.com</p>
+<p><strong>Website:</strong> www.benkumhene.com</p>
+<p><strong>Business Hours:</strong></p>
+<p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+<p>Saturday: 9:00 AM - 4:00 PM</p>
+<p>Sunday: Closed</p>
+</div>
+</div>
+
+<footer>
+<h2>BENKUMHENE ONLINE SHOP</h2>
+<p>Quality Products • Affordable Prices • Trusted Service</p>
+<p>&copy; 2026 Benkumhene Online Shop. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

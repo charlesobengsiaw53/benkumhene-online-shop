@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigation Bar</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    background:#198754;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.search-box{
+    flex:1;
+    text-align:center;
+    margin:10px 20px;
+}
+
+.search-box input{
+    width:60%;
+    max-width:450px;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#ffc107;
+}
+
+.category-bar{
+    background:#145c32;
+    text-align:center;
+    padding:12px;
+}
+
+.category-bar a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+.category-bar a:hover{
+    color:#ffc107;
+}
+
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:column;
+}
+
+.search-box{
+    width:100%;
+    margin:15px 0;
+}
+
+.search-box input{
+    width:95%;
+}
+
+.menu{
+    justify-content:center;
+}
+
+.menu a{
+    margin:8px;
+}
+
+.category-bar a{
+    display:inline-block;
+    margin:8px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Main Navigation -->
+
+<div class="navbar">
+
+<div class="logo">
+?? BENKUMHENE ONLINE SHOP
+</div>
+
+<div class="search-box">
+<input type="text" placeholder="Search for products...">
+</div>
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="wishlist.html">Wishlist</a>
+
+<a href="cart.html">Cart</a>
+
+<a href="account.html">My Account</a>
+
+<a href="login.html">Login</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="dropdown">
+<button class="dropbtn">shop</button>
+<div class="dropdown-conten">
+<a href="index.html">Home</a>
+
+<a href="shop.html">Shop</a>
+
+<a href="wishlist.html">Wishlist</a>
+
+<a href="cart.html">Cart</a>
+
+<a href="account.html">My Account</a>
+
+<a href="login.html">Login</a>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Category Navigation -->
+
+<div class="category-bar">
+
+<a href="books.html">?? Books</a>
+
+<a href="herbal.html">?? Herbal Products</a>
+
+<a href="electronics.html">?? Electronics</a>
+
+<a href="clothing.html">?? Clothing</a>
+
+<a href="home.html">?? Home & Kitchen</a>
+
+<a href="contact.html">?? Contact</a>
+
+<a href="about.html">? About</a>
+
+<a href="faq.html">? FAQ</a>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
