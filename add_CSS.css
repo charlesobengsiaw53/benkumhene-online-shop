@@ -70,6 +70,10 @@ textarea{
 textarea{
     resize:vertical;
 }
+#productForm{
+    max-width:700px;
+    height:50%
+}
 
 .btn{
     background:#198754;
