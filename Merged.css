@@ -19,7 +19,7 @@ font-family:Arial,sans-serif;
 
 .container{
     width:100%;
-    max-width:1400px;
+    max-width:2000px;
     margin:0 auto;
 }
 
@@ -29,10 +29,6 @@ body{
 background:#f8f8f8;   
 color:#222;    
 font-family:Poppins,sans-serif;
-  width: 100%;
-   max-width:1400px;
-  margin: 0 auto;
-  padding:0;
 
 }
 
