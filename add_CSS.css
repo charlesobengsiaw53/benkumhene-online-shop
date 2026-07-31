@@ -5,6 +5,13 @@
     box-sizing:border-box;
     font-family:Arial,Helvetica,sans-serif;
 }
+    .container{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+}
+
+}
 
 body{
     background:#f4f4f4;
