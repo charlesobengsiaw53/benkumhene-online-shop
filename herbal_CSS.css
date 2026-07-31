@@ -47,6 +47,10 @@ margin:0 0 15px;
 
 body{
     background:#f5fff4;
+   width: 100%;
+   overflow-x:hidden;
+   margin:0;
+   padding :0;
 }
 
 
