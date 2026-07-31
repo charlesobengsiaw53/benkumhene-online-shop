@@ -17,13 +17,8 @@ font-family:Arial,sans-serif;
 
 }
 
-.container{
+.cont{
     width:100%;
-    max-width:1400px;
-    margin:0 auto;
-}
-.wrapper{
-    width:95%;
     max-width:1400px;
     margin:0 auto;
 }
