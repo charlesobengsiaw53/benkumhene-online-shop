@@ -13,6 +13,13 @@ color:#fff;
 padding:15px 20px;
 }
 
+.container{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+}
+
+
 
 .hero h1{
 font-size:34px;
