@@ -3,7 +3,11 @@
 /*========BENKUMHENE ONLINE SHOP
   GHANA TRADITIONAL KENTE SHOP
 ============*/
-
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+}
 
 *{
     
@@ -17,11 +21,7 @@ font-family:Arial,sans-serif;
 
 }
 
-.cont{
-    width:100%;
-    max-width:1400px;
-    margin:0 auto;
-}
+
 
 body{
 background:#f8f8f8;   
