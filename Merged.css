@@ -166,7 +166,7 @@ font-size:18px;
     
 color:#555;
     
-max-width:800px;
+max-width:80%;
     
 margin:auto;
     
@@ -231,9 +231,9 @@ align-items:center;
 flex-shrink:0;
 font-size:24px;
     
-width:55px;
+width:5$;
     
-height:55px;
+height:5%;
     
 border-radius:50%;
     
@@ -311,7 +311,7 @@ gap:25px;
 
 .logo{
     
-font-size:28px;
+font-size:2%;
     
 font-weight:bold;
     
@@ -338,9 +338,9 @@ font-size:14px;
 
 .logo img{
     
-width:260px;
+width:26%;
     
-height:80px;
+height:8%;
     
 object-fit:contain;
 
@@ -384,7 +384,7 @@ font-size:18px;
     
 display:flex;
     
-width:600px;
+width:60%;
     
 align-items:center;
 
@@ -424,7 +424,7 @@ margin:0 40px;
 
 .search-box select{
     
-width:180px;
+width:18%;
     
 padding:12px;
     
