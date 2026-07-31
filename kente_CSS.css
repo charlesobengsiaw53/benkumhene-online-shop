@@ -5,6 +5,12 @@
 .card{
     position:relative;
 }
+.container{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+}
+
 
 .product-id{
     position:absolute;
